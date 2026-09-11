@@ -3,5 +3,6 @@ name = "tlon-fix"
 version = "0.1.0"
 requires-python = ">=3.14"
 dependencies = [
+    "blake3>=1.0.9",
     "pillow>=12.3.0",
 ]
