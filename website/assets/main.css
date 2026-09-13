@@ -1,0 +1,82 @@
+body {
+    margin: 0 auto;
+    padding: 2.5rem 1.5rem;
+    max-width: 80ch;
+    font-family: system-ui;
+    line-height: 1.5;
+    font-size: 1.2rem; /* https://joshcollinsworth.com/blog/never-use-px-for-font-size */
+    color: rgb(20% 20% 20%);
+    background: rgb(95% 95% 95%); /* https://uxplanet.org/basicdesign-never-use-pure-black-in-typography-36138a3327a6 */
+}
+
+h1,h2,h3,h4 {
+    line-height: 1.2;
+}
+
+nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    line-height: 1;
+
+    & a {
+        font-style: normal;
+        color: rgba(0, 0, 0, 0.8);
+        text-decoration: none;
+    }
+    & a:hover {
+        color: rgba(0, 0, 0, 0.8);
+        text-decoration: underline;
+    }
+    & .title {
+        font-size: 0.75rem;
+    }
+    & img {
+        max-height: 1.5rem;
+    }
+}
+
+main figure {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+
+    /* display:block; */
+    /* margin: auto; */
+
+    /* max-width: 80ch; */
+    & img {
+        max-width: 100%;
+    }
+    & figcaption {
+        font-size: 0.9rem
+    }
+}
+
+
+/* phark https://css-tricks.com/css-image-replacement/ */
+main h1.header-img {
+    width: 640px; 
+    height: 110px;
+    background: url("header-deep-red.png");
+    text-indent: -9999px;
+    margin: 2rem auto;
+}
+
+main header {
+    width: 100%;
+    margin: 2rem auto;
+}
+main header img {
+    display:block;
+    max-width: 100%;
+    /* margin: 2rem auto; */
+    margin: 0 auto;
+}
+
+main pre {
+    max-width: 100%;
+    overflow-x:auto;
+}

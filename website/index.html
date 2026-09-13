@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+
+    <title>Tlön: A Misty Story Fix</title>
+    <meta name="title" content="Tlön: A Misty Story Fix" />
+    <meta name="description" content="A fix for the 1999 point and click adventure game Tlön: A Misty Story." />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://sonneveld.dev/tlon" />
+    <meta property="og:title" content="Tlön: A Misty Story Fix" />
+    <meta property="og:description" content="A fix for the 1999 point and click adventure game Tlön: A Misty Story." />
+    <meta property="og:image" content="https://sonneveld.dev/tlon/assets/meta-image.jpg" />
+
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://sonneveld.dev/tlon" />
+    <meta property="twitter:title" content="Tlön: A Misty Story Fix" />
+    <meta property="twitter:description" content="A fix for the 1999 point and click adventure game Tlön: A Misty Story." />
+    <meta property="twitter:image" content="https://sonneveld.dev/tlon/assets/meta-image.jpg" />
+
+    <link rel='stylesheet' type='text/css' href='assets/main.css' />
+    <style type="text/css">
+        /* extra stylin' */
+    </style>
+
+</head>
+<body>
+
+    <header>
+        <nav>
+            <a href="https://sonneveld.dev/"><img src='assets/header-sonneveld.png'/></a>
+            <a class="title" href="https://sonneveld.dev/">sonneveld.dev</a>
+        </nav>
+    </header>
+
+    <main>
+
+        <article>
+            <header>
+                <!-- <h1 class="header-img">Tlön: A Misty Story</h1> -->
+                <img src="assets/tlon-title.gif" alt="Tlön: A Misty Story" />
+            </header>
+
+            <h2>What's Tlön: A Misty Story?</h2>
+
+                <p>Tlön: A Misty Story is a point and click adventure game from 1999 by Slovakian developers Reality. You play a villager who stumbles upon some adventure while crawling through a swamp.</p>
+                <p>You can read more about the game through <a href='https://www.mobygames.com/game/39757/tlon/'>MobyGames</a>, <a href='https://obscuritory.com/adventure/tlon-a-misty-story/'>The Obscuritory</a>   and  <a href='https://www.abandonware-france.org/ltf_abandon/ltf_jeu.php?id=2264'>Abandonware France</a> among other sites.</p>
+
+                <figure>
+                    <img loading="lazy" src="assets/early-screenshot.png" alt="Early game area in Tlön" />
+                    <figcaption>Early game area in Tlön</figcaption>
+                </figure>
+
+            <h2>What's the Problem?</h2>
+
+                <p>The problem is that there is a well known game breaking bug. Once you reach a certain point you are supposed to be ambushed by Goblins but the exit to the ambush room is never created. </p>
+                <p>Someone has painstakingly figured out <a href='https://www.hyena.net.ee/tlon/'>save games that are past that section</a> but there was no way to actually experience the ambush itself.</p>
+            
+            <h2>The Solution</h2>
+
+                <p>Anyway, I fixed it. You can now play through the whole game without any save game shenanigans.</p>
+
+                <p>The fix includes:</p>
+                <ul>
+                <li>a no-cd patch from an earlier release.
+                <li>a new exit when you complete a certain task.
+                <li>a fix for a bug during the ambush that left you in an unbreakable animation loop.
+                <li>allows skipping the logo at the start with ESC.
+                <li>print patched version number during main menu.
+                </ul>
+
+                <figure>
+                    <img loading="lazy" src="assets/tlon-ambush.gif" alt="Getting ambushed in Tlön" />
+                    <figcaption>Getting ambushed in Tlön</figcaption>
+                </figure>
+
+                <p>I've tested it on Windows 10 with DxWnd running and within a Windows 98 VM. I'd be interested in hearing if you have success in other configurations too!</p>
+
+            
+            <h2>Downloads</h2>
+                <p>Download: 
+                <ul>
+                    <li><a href="dl/tlon-fixed-20260913.zip">Tlön patch package 2026-09-13</a> (fixes NoCD)
+                    <li><s><a href="dl/tlon-fixed-20260912.zip">Tlön patch package 2026-09-12</a> (first release)</s>
+                </ul>
+                
+                <p>The patch package includes:</p>
+                <ul>
+                <li>two patched versions of tlon.exe. One has a no-cd patch included for when you want to run entirely from your hard drive.
+                <li>patched videos that have been circulating. I'm not sure of the author.
+                <li>a registry file for initialising the configuration. It is very conservative with a lot of effects disabled.
+                <li>an empty save game directory (the game assumes the installer has created one)
+                <li>a DxWnd .dxw file for importing into DxWnd.
+                </ul>
+                <p>I don't think I have permission to distribute the original game but <a href='https://visiongame.cz/hra/tlon-a-misty-story/'>Visiongame.cz hosts it</a> and seems official enough. The download is under "Ke stažení"</p>
+
+
+            <h2>Running It</h2>
+
+                <p>You can install with the original CD on a Windows 98 PC and use the patched executable but for most people, you will be running modern Windows. This will require a few extra steps to skip the install program (it sometimes doesn't work) and use DxWnd.
+
+                <p>The basic steps are:
+                <ul></ul>
+                <li>Copy everything from the Tlön CD into a new directory
+                <li>Decompress the patch zip and copy everything in that directory into your game directory.
+                <li>Your directory should look something like this: <br><img src="assets/Pasted image 20260912162605.png" />
+                <li>Install the Tlon.reg file by double clicking on it and giving Windows permission to make changes. (feel free to review the file first)
+                <li>Install and run DxWnd. Import Tlon.dxw. Change the "Path" setting to ensure it points to Tlon-fixed-no-cd.exe
+                <li>Run the game! You can run through DxWnd or just have DxWnd running in the background, it will hook into the game automatically.
+                </ul>
+
+            <h2>Troubleshooting</h2>
+
+                <p>The game is extreme fragile around alt-tab. It'll work sometimes but you'll just as likely get it to freeze. sad face emoji.</p>
+                <p>If you start experiencing slowdowns, you probably can fix it by quitting and reentering the game.</p>
+                <p>Try disabling atmospheric effects and/or smoke in the settings. Make sure anti-aliasing is always disabled, since I find the game crashes a lot with that enabled.
+                <p>Experiment with DxWnd settings documented in next section.
+                <p>Tshoot.exe is a bundled utility that will let you change some settings outside of the game.
+                <p>Try running on a virtual machine running Windows 98.
+
+
+            <h2>DxWnd and DirectDraw Wrappers</h2>
+
+                <p>Look, I don't know much about these things but DirectDraw is deprecated and might not even be available on modern Windows. There are various tools that will wrap and replace these APIs. I had some success using <a href="https://sourceforge.net/projects/dxwnd/">DxWnd</a> but you might want to explore other options.
+
+                <p>When using DxWnd, you can import `Tlon.dxw` from the download package and import it. 
+
+                <p>For Windows 11 and newer, you might need to also install the <a href="https://www.microsoft.com/en-ie/download/details.aspx?id=8109">DirectX End-User Runtimes (June 2010)</a>. I dunno, I'm still on Windows 10.
+
+                <p>If you want to create a DxWnd profile from scratch, these settings are important:
+
+                <p>Under "Video", the resolution must be 640x480:
+                <br><img src="assets/Pasted image 20260912160647.png">
+
+                <p>Under "DirectX", you must turn off "Support offscreen 3D" (it broke alt-tab for me) and enable "Set texture pixel format" (it fixes the colours during video playback). You can force VSync if you want too.
+                <br><img src="assets/Pasted image 20260912160759.png">
+
+                <p><b>Optional to try if still having trouble:</b></p>
+
+                <p>Under "GDI", you may want scaled GDI calls but it might only be for high-dpi systems.
+
+                <br><img src="assets/Pasted image 20260912161013.png">
+
+
+                <p>If you have trouble with alt-tabbing in and out of game (as in, it freezes when you come back to it), try enabling Mouse Clipper and DirectInput hooking, setting the coop level.<br>
+
+                <br><img src="assets/Pasted image 20260912165928.png">
+                <br><img src="assets/Pasted image 20260912170020.png">
+
+                <p>Oh! And don't modify the DxWnd settings while the game is running! It seems to definitely crash it that way. (Or maybe it was just coincodence)
+
+                <p>You may need to experiment though. I haven't found the perfect settings yet. Save often.
+                    
+                <p>Reference: I got some of these from the <a href="https://sourceforge.net/p/dxwnd/discussion/general/thread/b23bf0f3e8/">DxWnd discussion forums for Tlön</a>.
+
+
+
+
+
+            <h2>Contact Me!</h2>
+
+            <p>Got any suggestions or thoughts? You can reach me on <a href="https://bsky.app/profile/sonneveld.bsky.social">BlueSky</a> and/or <a href="https://mastodon.social/@sonneveld">Mastodon</a>. </p>
+
+
+            <h2>Page History</h2>
+
+            <p>2026-09-12 - Initial Release
+            <p>2026-09-13 - Added new version of NoCD patch, and print patch version in main menu.
+
+
+        </article>
+
+    </main>
+
+    <footer>
+        <small>Copyright © 2026 Sonneveld</small>
+    </footer>
+
+</body>
